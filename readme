@@ -1,0 +1,12 @@
+docker build -f dockerfile -t spatnaik77/todo .
+docker push spatnaik77/todo   //push to docker hub
+
+docker run -p 8080:8080 -t spatnaik77/todo
+
+docker ps //show all running instances
+docker stop <containerid> //stop the instaclear;
+
+----------
+mvn install dockerfile:build
+
+

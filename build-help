@@ -1,4 +1,4 @@
-docker build -f dockerfile -t spatnaik77/todo .
+docker build -f Dockerfile -t spatnaik77/todo .
 docker push spatnaik77/todo   //push to docker hub
 
 docker run -p 8080:8080 -t spatnaik77/todo

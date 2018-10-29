@@ -1,5 +1,5 @@
 FROM java:8
 VOLUME /tmp
 EXPOSE 8080
-ADD target/todo-0.0.1-SNAPSHOT.jar app.jar
+ADD target/todo-1.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]

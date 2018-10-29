@@ -13,7 +13,7 @@ public class TodoController {
 
     @GetMapping("/")
     public String hello(){
-        return "hello from todo service 5\n";
+        return "hello from todo service 6\n";
     }
 
 }

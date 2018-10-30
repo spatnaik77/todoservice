@@ -24,7 +24,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<docker.image.prefix>siddharthtodoserviceacr.azurecr.io</docker.image.prefix>
-        <Build.BuildNumber>100</Build.BuildNumber>
+        <Build.BuildNumber></Build.BuildNumber>
 	</properties>
 
 	<dependencies>
@@ -59,7 +59,7 @@
 					</execution>
 				</executions>
 				<configuration>
-                    <tag>${Build.BuildNumber}</tag>
+                    <tag>$(Build.BuildNumber)</tag>
 					<repository>${docker.image.prefix}/${project.artifactId}</repository>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>

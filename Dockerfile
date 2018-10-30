@@ -1,5 +1,6 @@
 FROM java:8
 VOLUME /tmp
 EXPOSE 8080
-ADD target/todo-0.0.1-SNAPSHOT.jar app.jar
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]

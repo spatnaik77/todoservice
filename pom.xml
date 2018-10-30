@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sidd</groupId>
-	<artifactId>todo</artifactId>
+	<artifactId>siddharthtodoservice</artifactId>
 	<version>2</version>
 	<packaging>jar</packaging>
 

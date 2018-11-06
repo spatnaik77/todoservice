@@ -1,4 +1,4 @@
-/*package com.sidd.todoservice;
+package com.sidd.todoservice;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,4 +16,3 @@ public class TodoserviceTest {
         Assert.assertEquals(1, 1);
     }
 }
-*/

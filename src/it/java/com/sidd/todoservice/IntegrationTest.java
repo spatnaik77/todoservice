@@ -11,9 +11,6 @@ public class IntegrationTest
 
         String url = "https://siddharthtodoservice-it.azurewebsites.net/";
         RestAssured.given().when().get(url).then().statusCode(200);
-
-
-        
     }
 
 

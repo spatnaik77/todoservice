@@ -2,11 +2,13 @@ package com.sidd.todo.dao;
 
 import com.sidd.todo.entity.TodoItem;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class TodoItemInMemoryRepository implements CrudRepository<TodoItem, String> {
 
     private Map<String, TodoItem> itemsMap = new HashMap<String, TodoItem>();

@@ -1,5 +1,6 @@
 package com.sidd.todo;
 
+import com.sidd.todo.dao.TodoItemCosmosRepository;
 import com.sidd.todo.dao.TodoItemInMemoryRepository;
 import com.sidd.todo.entity.TodoItem;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,12 @@ import java.util.UUID;
 @RestController
 public class TodoController {
 
+    //@Autowired
+    //private TodoItemCosmosRepository todoItemRepository;
+
     @Autowired
     private TodoItemInMemoryRepository todoItemRepository;
+
 
     public TodoController()
     {
@@ -22,7 +27,10 @@ public class TodoController {
     }
     @GetMapping("/")
     public String hello(){
-        return "Todo service is up and running \n";
+
+        TodoItem item1 = new TodoItem("item1", "item1-desc", "sidd");
+        todoItemRepository.save(item1);
+        return "Todo V1 service is up and running \n";
     }
 
     @RequestMapping(value = "/api/todolist/{index}",
@@ -51,13 +59,19 @@ public class TodoController {
      * HTTP POST NEW ONE
      */
     @RequestMapping(value = "/api/todolist", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> addNewTodoItem(@RequestBody TodoItem item) {
-        try {
-            item.setID(UUID.randomUUID().toString());
+    public ResponseEntity<TodoItem> addNewTodoItem(@RequestBody TodoItem item)
+    {
+        try
+        {
+            if(item.getID() == null)
+            {
+                item.setID(UUID.randomUUID().toString());
+            }
             todoItemRepository.save(item);
-            return new ResponseEntity<String>("Entity created", HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<String>("Entity creation failed", HttpStatus.CONFLICT);
+            return new ResponseEntity<TodoItem>(item, HttpStatus.CREATED);
+        } catch (Exception e)
+        {
+            throw e;
         }
     }
 
@@ -88,6 +102,7 @@ public class TodoController {
         }
 
     }
+
 
 
 }

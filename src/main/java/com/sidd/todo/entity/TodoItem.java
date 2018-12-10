@@ -1,5 +1,10 @@
 package com.sidd.todo.entity;
 
+import com.microsoft.azure.spring.data.cosmosdb.core.mapping.Document;
+
+
+
+@Document(collection = "item")
 public class TodoItem {
     private String id;
     private String description;

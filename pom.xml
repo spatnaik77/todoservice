@@ -5,7 +5,7 @@
 
 	<groupId>com.sidd</groupId>
 	<artifactId>sidd-todo-app</artifactId>
-	<version>1</version>
+	<version>latest</version>
 	<packaging>jar</packaging>
 	<name>sidd-todo-app</name>
 	<description>ToDo Service</description>
@@ -20,7 +20,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<docker.image.prefix>siddcontainerregistry.azurecr.io</docker.image.prefix>
+		<docker.image.prefix>spatnaik77</docker.image.prefix>
         <Build.BuildId>1</Build.BuildId>
 	</properties>
 
@@ -91,7 +91,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<!--plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.8</version>
@@ -110,7 +110,7 @@
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
 				</configuration>
-			</plugin>
+			</plugin-->
 		</plugins>
 	</build>
 
